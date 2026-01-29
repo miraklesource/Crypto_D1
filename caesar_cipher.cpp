@@ -23,7 +23,7 @@ std::string caesar_cipher(const std::string& message, int shift, bool direction 
 }
 
 int main() {
-    std::string ciphertext = "RGNEIDVGPEWXTRAPHHXFJT";
+    std::string ciphertext = "vcfgrwqfsbhfsbhfsntowbsobgfsbh";
     // dictionnaire qui associe les lettres pouvant être doublées en français à leur index
     std::unordered_map<char, int> doubled_letters = {{'C', 2},  {'F', 5},  {'L', 11},
                                                      {'M', 12}, {'N', 13}, {'P', 15},
@@ -31,8 +31,8 @@ int main() {
 
     std::cout << "Message chiffré : " << ciphertext << "\n";
 
-    for (auto& p : doubled_letters) {
-        std::string attempt = caesar_cipher(ciphertext, p.second, false);
-        std::cout << "k = " << p.second << " : " << attempt << "\n\n";
+    for (int i = 1; i < 27; i++) {
+        std::string attempt = caesar_cipher(ciphertext, i, false);
+        std::cout << "k = " << i << " : " << attempt << "\n\n";
     }
 }
